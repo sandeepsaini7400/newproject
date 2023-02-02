@@ -1,0 +1,28 @@
+
+.di12{
+	border: 1px solid black;
+    border-radius: 7px;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+
+}	
+
+.bd1{
+
+}
+
+.dt12{
+    list-style-type: none;  
+    font-family: fantasy;
+    font-size: 20px;
+}
+
+a:link{
+    text-decoration: none;
+
+}
+
+
+
+

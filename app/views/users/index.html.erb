@@ -1,0 +1,23 @@
+<%= stylesheet_link_tag "custom", "data-turbo-track": "reload" %>
+<body style="background-color: antiquewhite;">
+  
+  <div class="container p-3 border mt-4  border-primary rounded ">
+  <h1><center>Users</center></h1>
+    <div class="row border border-secondary rounded">  
+      <div class="p-3 dt12 border ">
+        <% @users.each do |user| %>
+          <div class="p-3 border border-secondary rounded mt-2 ">
+            <%= link_to user.name, articles_path %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+
+      <div class="card-body di12 mt-3">
+        <a><%= link_to "New User", new_user_path %> </a>
+      </div>
+
+  </div>
+
+</body>

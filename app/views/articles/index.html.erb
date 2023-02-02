@@ -1,0 +1,23 @@
+<%= stylesheet_link_tag "custom", "data-turbo-track": "reload" %>
+
+<body class="bd1">
+  <div class="container">
+    <div class="row border p-3 mb-3 m-3" >
+      <h1><center class = "border border-dark p-3 rounded">Articles</center></h1>
+        Our blog has <%= Article.public_count %> article and counting 
+          <div class=" border border-secondary mt-3 mb-3 rounded " style="padding-bottom: 18px;">
+            <% @articles.each do |article| %>
+              <% unless article.archived? %>
+                <div class="border border-secondary mt-3 rounded p-3 " >
+                    <%= link_to article.title, article_path(article) %>
+                </div>
+              <% end %>
+            <% end %>
+          </div>
+        </ul> 
+      <div class="card-body di12">
+        <a><%= link_to "New Article", new_article_path %> </a>
+      </div>
+    </div>
+  </div>
+</body>

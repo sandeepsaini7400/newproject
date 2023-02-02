@@ -1,0 +1,47 @@
+<%= stylesheet_link_tag "custom", "data-turbo-track": "reload" %>
+
+<%= form_with model: @article do |form| %>
+  <div class="container">
+    <div class="row ">
+      <div class="p-3 border border-dark rounded">
+        <div class="pb-2">
+          
+          <%= form.label :title %><br>
+          <%= form.text_field :title %>
+          <% article.errors.full_messages_for(:title).each do |message| %>
+            <div>
+              <%= message %>
+            </div> 
+            <% end %>
+        </div>
+
+        <div class="">
+          <%= form.label :body %><br>
+          <%= form.text_area :body %><br>
+          <% article.errors.full_messages_for(:body).each do |message| %>
+            <div><%= message %></div>
+          <% end %>
+        </div>
+
+        <div>
+          <%= form.label :user_id %><br>
+          <%= form.number_field :user_id %><br>
+          <% article.errors.full_messages_for(:user_id).each do |message| %>
+            <div><%= message %></div>
+          <% end %>
+
+        </div>
+
+        
+        <div>
+          <%= form.label :status %><br>
+          <%= form.select :status, ['public', 'private', 'archived'], selected: 'public' %>
+        </div>
+
+        <div class="pt-2">
+          <%= form.submit %>
+        </div>
+        </div>
+      </div>
+  </div>
+<% end %>  
